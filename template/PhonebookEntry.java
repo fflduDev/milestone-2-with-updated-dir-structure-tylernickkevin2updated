@@ -1,15 +1,11 @@
 package template;
 
-/**
- *   model a PhonebookEntry 
- *   
- *   PhonebookEntry has a phoneNumber and type
- *   
- *   
- *   
- */
+import java.util.Objects;
 
-class PhonebookEntry {
+/**
+ * Models a phonebook entry with a phone number and type.
+ */
+public class PhonebookEntry {
     private String phoneNumber;
     private String type;
 
@@ -37,6 +33,11 @@ class PhonebookEntry {
         if (obj == null || getClass() != obj.getClass()) return false;
         PhonebookEntry that = (PhonebookEntry) obj;
         return Objects.equals(phoneNumber, that.phoneNumber) &&
-                Objects.equals(type, that.type);
+               Objects.equals(type, that.type);
+    }
+
+    @Override
+    public String toString() {
+        return phoneNumber + " " + type;
     }
 }
